@@ -43,6 +43,7 @@ main{
     font-size: 28px;
     font-family: 'Manrope', sans-serif;
     margin: 1rem 0;
+    text-align: center;
 }
 
 .btn{

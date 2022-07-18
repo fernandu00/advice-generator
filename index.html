@@ -42,7 +42,7 @@
     const getUrl = await fetch(url)
     const response = await getUrl.json()
     title.innerHTML = `advice #${response.slip.id}`
-    advice.innerHTML = `"${response.slip.advice} "`
+    advice.innerHTML = `"${response.slip.advice}"`
 
   }
 
