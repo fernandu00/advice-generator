@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Advice generator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; color:#fff }
+    .attribution a { color: hsl(228, 45%, 44%); color:#ccc }
+  </style>
+</head>
+<body>
+
+  <main>
+    <div class="card">
+      <h3 class="title">
+         
+      </h3>
+      <p class="advice">
+        Vitae consequuntur labore magnam obcaecati quo natus.
+      </p>
+      <img src="./images/pattern-divider-mobile.svg" alt="divider">
+      
+      <button class="btn" id="btn" onclick="getData()"><img class="dice" src="./images/icon-dice.svg" alt="dice"></button>
+    </div>
+    
+  </main>
+  
+  <script>
+    const title = document.querySelector('.title')
+    const advice = document.querySelector('.advice')
+    const url = "https://api.adviceslip.com/advice"
+
+    async function getData() {
+    const getUrl = await fetch(url)
+    const response = await getUrl.json()
+    title.innerHTML = `advice #${response.slip.id}`
+    advice.innerHTML = `"${response.slip.advice} "`
+
+  }
+
+
+
+getData()
+  </script>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.linkedin.com/in/fernando-de-paula-alves-889110a5/">Fernando Alves</a>.
+  </div>
+</body>
+</html>
